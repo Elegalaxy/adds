@@ -1,17 +1,25 @@
+#include <iostream>
 #include "Computer.h"
 using namespace std;
 
-Computer::Computer(int r){
-    start(r);
+ComputerPlayer::ComputerPlayer(){
+
 }
 
-void Computer::start(int r){
-    for(int i = 0; i < r; i++){
-        Hand* temp = new Hand();
-        vec.push_back(temp);
-    }
-}
+char ComputerPlayer::makeMove(){
+    currentMove = 'R';
+    // int c = rand()%3;
+    // switch(c){
+    //     case 0:
+    //         choice = "R";
+    //         break;
+    //     case 1:
+    //         choice = "P";
+    //         break;
+    //     case 2:
+    //         choice = "S";
+    //         break;
+    // }
 
-vector<Hand*> Computer::getVec(){
-    return vec;
+    return currentMove;
 }

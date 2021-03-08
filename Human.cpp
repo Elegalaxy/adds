@@ -2,19 +2,14 @@
 #include "Human.h"
 using namespace std;
 
-Human::Human(int r){
-    start(r);
+HumanPlayer::HumanPlayer(){
+
 }
 
-void Human::start(int r){
-    string c;
-    for(int i = 0; i < r; i++){
-        cin >> c;
-        Hand* temp = new Hand(c);
-        vec.push_back(temp);
-    }
-}
-
-vector<Hand*> Human::getVec(){
-    return vec;
+char HumanPlayer::makeMove(){
+    char cur;
+    cout << "Enter move: ";
+    cin >> cur;
+    currentMove = cur;
+    return currentMove;
 }

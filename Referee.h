@@ -1,15 +1,11 @@
 #ifndef REFEREE_H
 #define REFEREE_H
-#include "Hand.h"
-#include <vector>
-#include <string>
+#include "Human.h"
+#include "Computer.h"
 
 class Referee{
     public:
         Referee();
-        void check(std::vector<Hand*> player, std::vector<Hand*> computer);
-    private:
-        std::string c1, c2;
+        char refGame(HumanPlayer player1, ComputerPlayer player2);
 };
-
 #endif

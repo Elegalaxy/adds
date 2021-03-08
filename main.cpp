@@ -1,17 +1,29 @@
 #include <iostream>
-#include "Hand.h"
+#include <vector>
 #include "Human.h"
 #include "Computer.h"
 #include "Referee.h"
 using namespace std;
 
 int main(){
-    int round;
-    cin >> round;
-    Human* h = new Human(round);
-    Computer* c = new Computer(round);
-    Referee* r = new Referee();
+    HumanPlayer human;
+    ComputerPlayer computer;
+    Referee referee;
+    vector<char> res;
 
-    r->check(h->getVec(), c->getVec());
+    int i;
+    cin >> i;
+
+    for(int j = 0; j < i; j++)
+        res.push_back(referee.refGame(human, computer));
+
+    for(int j = 0; j < res.size(); j++){
+        cout << res[j];
+        if(j < res.size()-1){
+            cout << " ";
+        }else{
+            cout << endl;
+        }
+    }
     return 0;
 }
