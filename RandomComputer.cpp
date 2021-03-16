@@ -8,7 +8,7 @@ RandomComputer::RandomComputer(){
 }
 
 char RandomComputer::makeMove(){
-    char choice;
+    char choice = ' ';
     int c = rand()%3;
     switch(c){
         case 0:

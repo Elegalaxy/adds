@@ -25,9 +25,9 @@ Player* Referee::refGame(Player* player1, Player* player2){
             cout << "BUG";
         }
 
-        cout << p1 << ": " << r1 << " " << p2 << ": " << r2 << endl;
+        // cout << p1 << ": " << r1 << " " << p2 << ": " << r2 << endl;
     }
-    cout << endl;
+    // cout << endl;
     if(r1 < r2) return player2;
     return player1;
 }
