@@ -11,6 +11,8 @@ bool cinF(){
         cout << "ERROR" << " ";
         //Make sure don't skip other cin
         cin.clear();
+        //Clear last output
+        cin.ignore(1000, '\n');
         return false;
     }
     return true;
