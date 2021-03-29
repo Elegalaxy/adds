@@ -9,7 +9,7 @@ class EfficientTruckloads{
         std::map<std::pair<int, int>, int> dp;
 
     public:
-        EfficientTruckLoads();
+        EfficientTruckloads();
         int numTrucks(int numCrates, int loadSize);
 };
 
