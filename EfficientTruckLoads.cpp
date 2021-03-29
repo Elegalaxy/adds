@@ -1,10 +1,10 @@
-#include "EfficientTruckLoads.h"
+#include "EfficientTruckloads.h"
 
-EfficientTruckLoads::EfficientTruckLoads(){
+EfficientTruckloads::EfficientTruckloads(){
 
 }
 
-int EfficientTruckLoads::numTrucks(int numCrates, int loadSize){
+int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
     //Using map for dp table
     //Return if result exist
     if(dp[std::make_pair(numCrates, loadSize)] != 0) return dp[std::make_pair(numCrates, loadSize)];

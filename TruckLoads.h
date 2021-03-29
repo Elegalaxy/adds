@@ -1,9 +1,9 @@
-#ifndef TRUCKLOADS_H
-#define TRUCKLOADS_H
+#ifndef Truckloads_H
+#define Truckloads_H
 
-class TruckLoads{
+class Truckloads{
     public:
-        TruckLoads();
+        Truckloads();
         int numTrucks(int numCrates, int loadSize);
 };
 

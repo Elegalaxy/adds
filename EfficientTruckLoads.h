@@ -3,7 +3,7 @@
 #include <map>
 #include <utility>
 
-class EfficientTruckLoads{
+class EfficientTruckloads{
     private:
         //Using map for dp table
         std::map<std::pair<int, int>, int> dp;

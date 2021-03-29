@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Reverse.h"
-#include "TruckLoads.h"
-#include "EfficientTruckLoads.h"
+#include "Truckloads.h"
+#include "EfficientTruckloads.h"
 using namespace std;
 
 bool cinF(){
@@ -18,8 +18,8 @@ bool cinF(){
 
 int main(){
     Reverse* r1 = new Reverse();
-    TruckLoads* t1 = new TruckLoads();
-    EfficientTruckLoads* e1 = new EfficientTruckLoads();
+    Truckloads* t1 = new Truckloads();
+    EfficientTruckloads* e1 = new EfficientTruckloads();
 
     int i, numCrates, loadSize;
     string s;
