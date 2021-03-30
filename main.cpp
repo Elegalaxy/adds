@@ -70,8 +70,7 @@ int main(){
     }
 
     if(check && check2){
-        if(numCrates <= 0 || loadSize <= 0){
-            // cout << "ERROR" << " ERROR";
+        if(numCrates <= 0 || loadSize <= 0 || numCrates > 10000 || loadSize > numCrates){
             t1->numTrucks(numCrates, loadSize);
             cout << " ";
             e1->numTrucks(numCrates, loadSize);
