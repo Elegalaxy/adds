@@ -1,11 +1,15 @@
 #include "EfficientTruckLoads.h"
+#include <iostream>
 
 EfficientTruckloads::EfficientTruckloads(){
 
 }
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
-    if(numCrates <= 0 || loadSize <= 0) return -1;
+    if(numCrates <= 0 || loadSize <= 0){
+        std::cout << "ERROR";   
+        return -1;
+    }
     
     //Using map for dp table
     //Return if result exist

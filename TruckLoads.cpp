@@ -1,11 +1,15 @@
 #include "TruckLoads.h"
+#include <iostream>
 
 Truckloads::Truckloads(){
 
 }
 
 int Truckloads::numTrucks(int numCrates, int loadSize){
-    if(numCrates <= 0 || loadSize <= 0) return -1;
+    if(numCrates <= 0 || loadSize <= 0){
+        std::cout << "ERROR";   
+        return -1;
+    }
     if(numCrates <= loadSize) return 1; //If the numCrates fulfills, return 1
 
     int cur = 0;
