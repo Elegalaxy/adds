@@ -5,6 +5,8 @@ EfficientTruckloads::EfficientTruckloads(){
 }
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
+    if(numCrates <= 0 || loadSize <= 0) return -1;
+    
     //Using map for dp table
     //Return if result exist
     if(dp[std::make_pair(numCrates, loadSize)] != 0) return dp[std::make_pair(numCrates, loadSize)];
