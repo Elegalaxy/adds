@@ -6,6 +6,7 @@ EfficientTruckloads::EfficientTruckloads(){
 }
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
+    if(!numCrates) return 0;
     if(numCrates < 0 || loadSize < 0 || numCrates > 10000 || loadSize >= 10000){
         return 0;
     }
