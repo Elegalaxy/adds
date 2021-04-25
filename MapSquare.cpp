@@ -11,6 +11,10 @@ std::vector<int> MapSquare::map(std::vector<int> vec){
 
 void MapSquare::func(std::vector<int>& vec, int i){
     if(i == vec.size()) return;
-    vec[i] *= vec[i];
+    vec[i] = f(vec[i]);
     func(vec, i+1);
+}
+
+int MapSquare::f(int n){
+    return n * n;
 }

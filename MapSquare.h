@@ -8,6 +8,7 @@ class MapSquare: public MapGeneric{
         std::vector<int> map(std::vector<int>);
     private:
         void func(std::vector<int>&, int);
+        int f(int);
 };
 
 #endif
