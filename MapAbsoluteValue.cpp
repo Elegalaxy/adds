@@ -10,7 +10,7 @@ std::vector<int> MapAbsoluteValue::map(std::vector<int> vec){
 }
 
 void MapAbsoluteValue::func(std::vector<int>& vec, int i){
-    if(i == vec.size()) return;
+    if(i == (int)vec.size()) return;
     if(vec[i] < 0)
         vec[i] = f(vec[i]);
     func(vec, i+1);

@@ -24,6 +24,7 @@ clean:
 	rm FilterNonPositive.o
 	rm FilterForTwoDigitPositive.o
 	rm ReduceMinimum.o
+	rm ReduceGCD.o
 	rm MapGeneric.h.gch
 	rm FilterGeneric.h.gch
 	rm ReduceGeneric.h.gch

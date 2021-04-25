@@ -27,12 +27,12 @@ int main(){
         vec.push_back(stoi(temp));
     }
 
-    MapGeneric * sq = new MapSquare();
+    // MapGeneric * sq = new MapSquare();
     MapGeneric * tr = new MapTriple();
     MapGeneric * ab = new MapAbsoluteValue();
 
     FilterGeneric * odd = new FilterOdd();
-    FilterGeneric * pos = new FilterNonPositive();
+    // FilterGeneric * pos = new FilterNonPositive();
     FilterGeneric * two = new FilterForTwoDigitPositive();
 
     ReduceGeneric * mini = new ReduceMinimum();

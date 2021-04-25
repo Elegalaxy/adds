@@ -10,7 +10,7 @@ int ReduceGCD::reduce(std::vector<int> vec){
 }
 
 void ReduceGCD::func(std::vector<int>& vec, int i){
-    if(i == vec.size()) return;
+    if(i == (int)vec.size()) return;
     res = binaryOperator(vec[i], res);
     func(vec, i+1);
 }

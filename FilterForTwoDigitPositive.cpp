@@ -16,7 +16,7 @@ bool FilterForTwoDigitPositive::g(int n){
 }
 
 void FilterForTwoDigitPositive::func(std::vector<int>& vec, int i){
-    if(i == vec.size()) return;
+    if(i == (int)vec.size()) return;
     if(g(vec[i]))
         func(vec, i+1);
     else {

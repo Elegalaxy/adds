@@ -10,7 +10,7 @@ std::vector<int> FilterOdd::filter(std::vector<int> vec){
 }
 
 void FilterOdd::func(std::vector<int>& vec, int i){
-    if(i == vec.size()) return;
+    if(i == (int)vec.size()) return;
     if(!g(vec[i])){
         vec.erase(vec.begin()+i);
         func(vec, i);

@@ -10,7 +10,7 @@ int ReduceMinimum::reduce(std::vector<int> vec){
 }
 
 void ReduceMinimum::func(std::vector<int>& vec, int i){
-    if(i == vec.size()) return;
+    if(i == (int)vec.size()) return;
     min = binaryOperator(vec[i], min);
     func(vec, i+1);
 }
