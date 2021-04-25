@@ -1,86 +1,29 @@
 #include <iostream>
-#include "Reverse.h"
-#include "Truckloads.h"
-#include "EfficientTruckloads.h"
+#include "MapSquare.h"
+#include "MapTriple.h"
+#include "MapAbsoluteValue.h"
 using namespace std;
 
-bool cinF(int i, bool last){
-    //If input invalid
-    if(cin.fail()){
-        //Print error
-        cout << "ERROR" << " ";
-
-        //Make sure don't skip other cin
-        cin.clear();
-        //Clear last output
-        if(last)
-            cin.ignore(1000, '\n');
-        else
-            cin.ignore(1000, ' ');
-
-        return false;
-    }
-    return true;
-}
-
-bool cinF(string s, bool last){
-    //If input invalid
-    if(cin.fail()){
-        //Print error
-        cout << "ERROR" << " ";
-        //Make sure don't skip other cin
-        cin.clear();
-        //Clear last output
-        if(last)
-            cin.ignore(1000, '\n');
-        else
-            cin.ignore(1000, ' ');
-
-        return false;
-    }
-    return true;
+void print(vector<int> &vec){
+    for(int i:vec) cout << i << " ";
+    cout << endl;
 }
 
 int main(){
-    Reverse* r1 = new Reverse();
-    Truckloads* t1 = new Truckloads();
-    EfficientTruckloads* e1 = new EfficientTruckloads();
+    MapGeneric * sq = new MapSquare();
+    MapGeneric * tr = new MapTriple();
+    MapGeneric * ab = new MapAbsoluteValue();
 
-    int i, numCrates, loadSize;
-    string s;
+    vector<int> vec = {1,2,3,4,5,6};
+    vec = tr->map(vec);
+    print(vec);
+    
+    vec = {1,2,3,4,5,6};
+    vec = sq->map(vec);
+    print(vec);
 
-    cin >> i;
-    if(cinF(i, false)) //Catch input error
-        cout << r1->reverseDigit(i) << " ";
-        
-    cin >> s;
-    if(cinF(s, false))
-        cout << r1->reverseString(s) << " ";
-
-    bool check = true, check2 = false;
-    cin >> numCrates;
-
-    if(cinF(numCrates, false)){
-        cin >> loadSize;
-        if(cinF(loadSize, true)){
-            check2 = true;
-        }
-    }else{
-        check = false;
-    }
-
-    if(check && check2){
-        if(numCrates < 0 || loadSize < 0 || numCrates > 10000 || loadSize > numCrates){
-            cout << "ERROR ERROR";
-        }else{
-            cout << t1->numTrucks(numCrates, loadSize) << " ";
-            cout << e1->numTrucks(numCrates, loadSize);
-        }
-    }else{
-        cout << "ERROR";
-    }
-
-    cout << endl;
-
+    vec = {-2, -3, -1, 0, 5};
+    vec = ab->map(vec);
+    print(vec);
     return 0;
 }
