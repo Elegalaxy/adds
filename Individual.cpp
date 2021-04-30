@@ -40,8 +40,8 @@ void Individual::flipBit(int pos){
 
 int Individual::getMaxOnes(){
     int max = 0, cur = 0;
-    for(int i = 0; i < n; i++){
-        if(binaryString[i] == '0'){
+    for(int i = 0; i <= n; i++){
+        if(i == n || binaryString[i] == '0'){
             if(cur > max) max = cur;
             cur = 0;
         }else cur++;
