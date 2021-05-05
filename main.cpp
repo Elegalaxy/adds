@@ -1,29 +1,18 @@
 #include <iostream>
-#include "BitFlip.h"
-#include "BitFlipProb.h"
-#include "Rearrange.h"
 using namespace std;
 
-Individual * execute(Individual * indPtr, Mutator * mPtr, int k){
-    mPtr->mutate(indPtr, k);
-    return indPtr;
+//Question 10
+int func(int n, int cur, int i){
+    if(i > n) return cur;
+    cur = i*i + func(n, cur, i+1);
+    return cur;
+}
+
+int sumOfSquare(int n){
+    return func(n, 0, 0);
 }
 
 int main(){
-    string s1, s2;
-    int it1, it2;
-    cin >> s1 >> it1 >> s2 >> it2;
-
-    Individual* i1 = new Individual(s1);
-    Individual* i2 = new Individual(s2);
-
-    BitFlip* b1 = new BitFlip();
-    Rearrange* r1 = new Rearrange();
-    
-    i1 = execute(i1, b1, it1);
-    i2 = execute(i2, r1, it2);
-
-    cout << i1->getString() << " " << i2->getString() << " " << i2->getMaxOnes() << endl;
-    // cout << execute(i1, b1, 9)->getString() << endl;
+    cout << sumOfSquare(4) << endl;
     return 0;
 }
