@@ -1,5 +1,8 @@
 {
     "files.associations": {
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
         "algorithm": "cpp",
         "cctype": "cpp",
         "cmath": "cpp",
@@ -31,7 +34,6 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "vector": "cpp",
         "xfacet": "cpp",
         "xiosbase": "cpp",
         "xlocale": "cpp",
@@ -39,9 +41,7 @@
         "xlocnum": "cpp",
         "xmemory": "cpp",
         "xstddef": "cpp",
-        "xstring": "cpp",
         "xtr1common": "cpp",
-        "xtree": "cpp",
-        "xutility": "cpp"
+        "xtree": "cpp"
     }
 }
