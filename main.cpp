@@ -1,18 +1,36 @@
 #include <iostream>
+#include <string>
+#include "BubbleSort.h"
+#include "QuickSort.h"
+#include "RecursiveBinarySearch.h"
 using namespace std;
 
-//Question 10
-int func(int n, int cur, int i){
-    if(i > n) return cur;
-    cur = i*i + func(n, cur, i+1);
-    return cur;
-}
-
-int sumOfSquare(int n){
-    return func(n, 0, 0);
-}
-
 int main(){
-    cout << sumOfSquare(4) << endl;
+    string s;
+    string temp = "";
+    vector<int> arr;
+    getline(cin, s);
+
+    for(int i = 0; i <= s.length(); i++){
+        if(i == s.length() || s[i] == ' '){
+            arr.push_back(stoi(temp));
+            temp = "";
+        }
+        else
+            temp += s[i];
+    }
+
+    Sort* sQ = new QuickSort();
+    arr = sQ->sort(arr);
+
+    RecursiveBinarySearch* r = new RecursiveBinarySearch();
+    if(r->search(arr, 1))
+        cout << "true" << " ";
+    else
+        cout << "false" << " ";
+
+    for(int i:arr) cout << i << " ";
+    cout << endl;
+
     return 0;
 }
