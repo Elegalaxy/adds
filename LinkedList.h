@@ -16,6 +16,7 @@ class LinkedList{
         void deletePosition(int position);
         int getItem(int position);
         void printItems();
+        ~LinkedList();
         
         Node* head;
 };
