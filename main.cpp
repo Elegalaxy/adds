@@ -14,18 +14,19 @@ int main(){
     int count = 0; //Function or parameter are we taking
     int n = 0; //Size of Linkedlist
 
-    vector<int> vec;
+    int arr[100];
     LinkedList* list; //Head of linkedlist
 
     for(int i = 0; i <= s.length(); i++){
         if(i == s.length() || s[i] == ' '){ //If we got a full string
             if(start){ //If this is initial value
-                vec.push_back(stoi(temp));
+                arr[n] = stoi(temp);
+                // vec.push_back(stoi(temp));
                 n++;
 
                 //When we got all initial value
                 if(i < s.length() && (s[i+1] >= 'A' && s[i+1] <= 'Z')){
-                    list = new LinkedList(vec, n); //Create new LinkedList
+                    list = new LinkedList(arr, n); //Create new LinkedList
                     start = false;
                 }
             }else{ //If we start to take function and parameter

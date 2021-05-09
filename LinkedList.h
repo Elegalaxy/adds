@@ -6,7 +6,7 @@
 class LinkedList{
     public:
         LinkedList();
-        LinkedList(std::vector<int> vec, int n);
+        LinkedList(int vec[], int n);
         void addFront(int newItem);
         void addEnd(int newItem);
         void addAtPosition(int position, int newItem);

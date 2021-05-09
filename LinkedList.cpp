@@ -6,7 +6,7 @@ LinkedList::LinkedList(){
     head = nullptr;
 }
 
-LinkedList::LinkedList(std::vector<int> vec, int n){
+LinkedList::LinkedList(int vec[], int n){
     Node* cur = head;
     for(int i = 0; i < n; i++){
         if(head){
