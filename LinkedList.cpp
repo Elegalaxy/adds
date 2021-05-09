@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include <iostream>
+#include <climits>
 
 LinkedList::LinkedList(){
     head = nullptr;
@@ -13,6 +14,7 @@ LinkedList::LinkedList(std::vector<int> vec, int n){
             cur = cur->getNext();
         }else{
             head = new Node(vec[i]);
+            cur = head;
         }
     }
 }
@@ -23,10 +25,11 @@ void LinkedList::addFront(int newItem){
 }
 
 void LinkedList::addEnd(int newItem){
-    while(head->getNext()){
-        head = head->getNext();
+    Node* temp = head;
+    while(temp->getNext()){
+        temp = temp->getNext();
     }
-    head->setNext(new Node(newItem));
+    temp->setNext(new Node(newItem));
 }
 
 void LinkedList::addAtPosition(int position, int newItem){
@@ -57,6 +60,8 @@ int LinkedList::search(int item){
         temp = temp->getNext();
         i++;
     }
+
+    std::cout << 0 << " ";
     return 0;
 }
 
@@ -68,7 +73,7 @@ void LinkedList::deleteFront(){
 
 void LinkedList::deleteEnd(){
     Node* temp = head;
-    while(temp->getNext()){
+    while(temp->getNext()->getNext()){
         temp = temp->getNext();
     }
     delete(temp->getNext());
@@ -86,8 +91,8 @@ void LinkedList::deletePosition(int position){
 
     Node* temp = head;
     for(int i = 0; i < position-2; i++){
-        head = head->getNext();
-        if(!head)
+        temp = temp->getNext();
+        if(!temp)
             return;
     }
     Node* t = temp->getNext();
@@ -96,20 +101,28 @@ void LinkedList::deletePosition(int position){
 }
 
 int LinkedList::getItem(int position){
+    if(position <= 0){
+        std::cout << INT_MAX << " ";
+        return INT_MAX;
+    }
     Node* temp = head;
-    for(int i = 0; i < position; i++){
+    for(int i = 0; i < position-1; i++){
         temp = temp->getNext();
-        if(!temp)
-            return;
+        if(!temp){
+            std::cout << INT_MAX << " ";
+            return INT_MAX;
+        }
     }
     std::cout << temp->getData() << " ";
+    return temp->getData();
 }
 
 void LinkedList::printItems(){
-    if(!head) return;
-    while(head){
-        std::cout << head->getData() << " ";
-        head = head->getNext();
+    Node* temp = head;
+    if(!temp) return;
+    while(temp){
+        std::cout << temp->getData() << " ";
+        temp = temp->getNext();
     }
     std::cout << std::endl;
 }

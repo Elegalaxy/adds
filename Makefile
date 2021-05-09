@@ -1,7 +1,9 @@
 main:
-	g++ -c Sort.h Sort.cpp
-	g++ -o main Sort.o BubbleSort.o QuickSort.o RecursiveBinarySearch.o main.cpp
+	g++ -c Node.h Node.cpp
+	g++ -c LinkedList.h LinkedList.cpp
+	g++ -o main Node.o LinkedList.o main.cpp
 	make clean
 
 clean:
-	rm Sort.o Sort.h.gch
+	rm Node.o Node.h.gch
+	rm LinkedList.o LinkedList.h.gch
