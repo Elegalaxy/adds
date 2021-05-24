@@ -54,6 +54,7 @@ void Infix::convert(){
     }
 
     //Start to convert
+    bool isFirst = true;
     int cal = stoi(nums.front()); //Numeric result
     std::string res = nums.front(); //Store string result
     nums.pop();
@@ -72,13 +73,25 @@ void Infix::convert(){
             res += " - " + curStr;
             cal -= curNum;
         }else if(curSym == "*"){
-            res = "(" + res + ")" + " * " + curStr;
+            if(isFirst){
+                res += " * " + curStr;
+            }else{
+                res = "(" + res + ")" + " * " + curStr;
+            }
             cal *= curNum;
         }else if(curSym == "/"){
-            res = "(" + res + ")" + " * " + curStr;
+            if(!curNum){
+                std::cout << "Error" << std::endl;
+                return;
+            }
+            if(isFirst){
+                res += " / " + curStr;
+            }else{
+                res = "(" + res + ")" + " * " + curStr;
+            }
             cal /= curNum;
         }
-        // std::cout << cal << std::endl;
+        isFirst = false;
     }
 
     std::cout << res << " = " << cal << std::endl;
