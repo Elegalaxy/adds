@@ -87,7 +87,7 @@ void Infix::convert(){
             if(isFirst){
                 res += " / " + curStr;
             }else{
-                res = "(" + res + ")" + " * " + curStr;
+                res = "(" + res + ")" + " / " + curStr;
             }
             cal /= curNum;
         }
