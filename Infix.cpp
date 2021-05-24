@@ -69,9 +69,11 @@ void Infix::convert(){
         if(curSym == "+"){
             res += " + " + curStr;
             cal += curNum;
+            isFirst = false;
         }else if(curSym == "-"){
             res += " - " + curStr;
             cal -= curNum;
+            isFirst = false;
         }else if(curSym == "*"){
             if(isFirst){
                 res += " * " + curStr;
@@ -91,7 +93,6 @@ void Infix::convert(){
             }
             cal /= curNum;
         }
-        isFirst = false;
     }
 
     std::cout << res << " = " << cal << std::endl;
