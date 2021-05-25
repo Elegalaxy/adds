@@ -36,6 +36,10 @@ void Infix::convert(){
             if(isNum){ //If number section start
                 nums.push(temp); //Push current number
             }else{ //If this is still symbol
+                if(temp[0] >= '0' && temp[0] <= '9'){
+                    std::cout << temp << " = " << temp << std::endl;
+                    return;
+                }
                 //Push last symbol into stack
                 syms.push(temp);
                 //Check if number start
