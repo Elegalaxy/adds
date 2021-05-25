@@ -21,15 +21,18 @@ std::string Infix::getNot(){
 
 void Infix::convert(){
     //Parse all elements from notation
-
     std::stack<std::string> syms; //Store all symbols by order
     std::queue<std::string> nums; //Store all numbers by order
     int n = note.length(); //Length of notation
     std::string temp = ""; //Store current word
     bool isNum = false; //Check if number section start
+    bool isSpace = false;
 
     for(int i = 0; i <= n; i++){
         if(i == n || note[i] == ' '){
+            if(note[i] == ' ')
+                isSpace = true;
+
             if(isNum){ //If number section start
                 nums.push(temp); //Push current number
             }else{ //If this is still symbol
@@ -44,6 +47,11 @@ void Infix::convert(){
             //Parse word from string
             temp += note[i];
         }
+    }
+
+    if(!isSpace){
+        std::cout << "Error" << std::endl;
+        return;
     }
 
     //Check if the input is legit
